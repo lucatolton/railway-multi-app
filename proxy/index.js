@@ -11,10 +11,6 @@ app.get('/', (req, res) => {
     res.send('Proxy');
 });
 
-app.get('*', (req, res) => {
-    res.redirect('/');
-});
-
 app.use('/app/1', createProxyMiddleware({
     target: 'http://localhost:4001',
     changeOrigin: true,
